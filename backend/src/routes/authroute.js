@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User.js');
 
-
-router.get("/signup", (req, res) => {
-	res.send("user yay!!!");
+router.get('/singup', async (req, res) => {
+	const users = await User.findAll();
+	res.json(users);
 });
-
 
 module.exports = router;
