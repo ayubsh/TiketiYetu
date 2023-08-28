@@ -13,8 +13,12 @@ function createNameTable(knex, table_name) {
 	});
 }
 
-function references(table, table_name){
-	//TODO - create references 
+function referencess(table, table_name){
+	//TODO - create referencess 
+	let fname = `${table_name}_id`;
+	let t = `${table_name}.${table_name}ID`;
+	table.integer(fname).unsigned();
+	table.foreign(fname).references(t);
 }
 /**
  * @param { import("knex").Knex } knex
@@ -37,7 +41,8 @@ exports.up = async (knex) => {
 		table.text('Description');
 		table.string('Venue').notNullable();
 		table.string('Category').notNullable();
-		// TODO create reference to OrginizortID
+		// TODO create references to OrginizortID
+		referencess(table, 'User');
 		table.timestamps(false, true);
 	});
 
@@ -48,24 +53,29 @@ exports.up = async (knex) => {
 		table.string('Type').notNullable();
 		table.float('Price').notNullable();
 		table.integer('Quantity').notNullable();
-		//TODO create reference to EVENTID
+		//TODO create references to EVENTID
+		referencess(table, 'Event');
 	});
 
 	await knex.schema.createTable('Cart', (table) => {
-		table.increments('CardID').notNullable().primary();
-		//TODO create ref to UserID
+		table.increments('CartID').notNullable().primary();
+		//TODO create // to UserID
+		referencess(table, 'User');
 	})
 
 	await knex.schema.createTable('CartItem', (table) => {
 		table.increments('CartItemID').notNullable().primary();
-		//TODO create ref to CardID
-		//TODO create ref to TicketID
+		//TODO create // to CardID
+		referencess(table, 'Cart');
+		//TODO create // to TicketID
+		referencess(table, 'Ticket');
 		table.integer('Quantity').notNullable();
 	})
 
 	await knex.schema.createTable('Purchase', (table) => {
 		table.increments('PurchaseID').notNullable().primary();
-		//TODO create ref to UserID
+		//TODO create // to UserID
+		referencess(table, 'User');
 		table.timestamps('PurchasedDate');
 		table.float('TotalAmount').notNullable();
 		
@@ -73,16 +83,20 @@ exports.up = async (knex) => {
 
 	await knex.schema.createTable('PurchaseItem', (table) => {
 		table.increments('PurchaseItemID').notNullable().primary();
-		//TODO create ref to PurchaseID
-		//TODO create ref to TicketID
+		//TODO create // to PurchaseID
+		referencess(table, 'Purchase');
+		//TODO create // to TicketID
+		referencess(table, 'Ticket');
 		table.integer('Quantity').notNullable();
 
 	})
 
 	await knex.schema.createTable('Review', (table) => {
 		table.increments('ReviewID').notNullable().primary();
-		//TODO create ref to UserID
-		//TODO create ref to EventID
+		//TODO create // to UserID
+		referencess(table, 'User');
+		//TODO create // to EventID
+		referencess(table, 'Event');
 		table.integer('Rating').notNullable();
 		table.text('Comment');
 	})
