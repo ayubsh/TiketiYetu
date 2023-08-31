@@ -7,6 +7,7 @@ import './index.css'
 import App from './App.jsx'
 import ErrorPage from './components/ErrorPage';
 import Register from './components/Register'
+import Login from './components/Login'
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
 		path: '/',
 		element: <App />,
 		errorElement: <ErrorPage />
+	},
+	{
+		path: '/login',
+		element: <Login />
 	}
 ])
 
