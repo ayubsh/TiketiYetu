@@ -21,6 +21,7 @@ const Login = () => {
             Password: inputs.password
         }
         const res = await fetch(url, {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
