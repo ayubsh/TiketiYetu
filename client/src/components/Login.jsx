@@ -29,6 +29,7 @@ const Login = () => {
         });
 
         const json = await res.json();
+        console.log(json)
     }
     return (
         <div className="form-page">

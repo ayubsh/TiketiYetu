@@ -1,8 +1,12 @@
+import HeaderBar from "./HeaderBar";
+import Hero from './Hero';
+import '../index.css'
+
 const Landing = () => {
 	return (
-		<div>
-			<h2>TiketiYetu</h2>
-			<p>Welcome to TiketiYetu</p>
+		<div class="container mx-auto">
+			<HeaderBar />
+			<Hero />
 		</div>
 	)
 }

@@ -1,4 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* 
 .login-page {
     width: 360px;
     padding: 8% 0 0;
@@ -55,4 +59,7 @@
   .alink {
     color: #4CAF50;
     text-decoration: none;
-  }
+  } */
+
+ /* new section */
+ /* Start Global Rules */

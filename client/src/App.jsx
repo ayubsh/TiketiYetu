@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import Landing from './components/Landing';
-
+import './index.css'
 
 function App() {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -9,11 +9,7 @@ function App() {
 		setIsAuthenticated(boolean);
 	};
 
-  return (
-    <>
-			<Landing />
-   </>
-  )
+  return <Landing />
 }
 
 export default App
