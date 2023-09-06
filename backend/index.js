@@ -27,5 +27,5 @@ app.use('/api/auth', auth);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 console.log("tttttt");
-const port = 5001;
+const port = 5000;
 app.listen(port, () => console.log(`Server has started on port: ${port}`))
