@@ -1,7 +1,7 @@
 const FeaturedTicket = () => {
     return (
       <section
-        class="
+        className="
             bg-white
             pt-20
             lg:pt-[120px]
@@ -12,12 +12,12 @@ const FeaturedTicket = () => {
             overflow-hidden
             "
       >
-        <div class="container">
-          <div class="flex flex-wrap -mx-4">
-            <div class="w-full px-4">
-              <div class="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
+        <div className="container">
+          <div className="flex flex-wrap -mx-4">
+            <div className="w-full px-4">
+              <div className="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
                 <h2
-                  class="
+                  className="
                         font-bold
                         text-3xl
                         sm:text-4xl
@@ -28,30 +28,30 @@ const FeaturedTicket = () => {
                 >
                   Featured Tickets
                 </h2>
-                <p class="text-base text-body-color">
+                <p className="text-base text-body-color">
                   Upcoming Eventes and Concerts
                 </p>
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap justify-center -mx-4">
+          <div className="flex flex-wrap justify-center -mx-4">
 
 
-            <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div class="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
-                <p class="mb-2 text-2xl font-medium">Enterprise</p>
-                <p class="mb-6">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+              <div className="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
+                <p className="mb-2 text-2xl font-medium">Enterprise</p>
+                <p className="mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Suscipit earum vitae tempore.
                 </p>
-                <div class="mb-6 space-y-2">
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                <div className="mb-6 space-y-2">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -62,13 +62,13 @@ const FeaturedTicket = () => {
                     </span>
                     <span>Better Support</span>
                   </div>
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -79,13 +79,13 @@ const FeaturedTicket = () => {
                     </span>
                     <span>5 team members</span>
                   </div>
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -97,28 +97,28 @@ const FeaturedTicket = () => {
                     <span>200 Credits</span>
                   </div>
                 </div>
-                <button class="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
+                <button className="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
                   Choose Plan
                 </button>
               </div>
             </div>
 
 
-            <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div class="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
-                <p class="mb-2 text-2xl font-medium">Enterprise</p>
-                <p class="mb-6">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
+              <div className="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
+                <p className="mb-2 text-2xl font-medium">Enterprise</p>
+                <p className="mb-6">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Suscipit earum vitae tempore.
                 </p>
-                <div class="mb-6 space-y-2">
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                <div className="mb-6 space-y-2">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -129,13 +129,13 @@ const FeaturedTicket = () => {
                     </span>
                     <span>Better Support</span>
                   </div>
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -146,13 +146,13 @@ const FeaturedTicket = () => {
                     </span>
                     <span>5 team members</span>
                   </div>
-                  <div class="flex space-x-2 font-medium">
-                    <span class="text-blue-600">
+                  <div className="flex space-x-2 font-medium">
+                    <span className="text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                       >
                         <path
                           fill-rule="evenodd"
@@ -164,7 +164,7 @@ const FeaturedTicket = () => {
                     <span>200 Credits</span>
                   </div>
                 </div>
-                <button class="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
+                <button className="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
                   Choose Plan
                 </button>
               </div>

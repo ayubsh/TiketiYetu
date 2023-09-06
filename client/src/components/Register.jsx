@@ -2,7 +2,7 @@ import {useState} from 'react';
 import '../index.css'
 import { Link } from "react-router-dom";
 
-const url = 'http://192.168.0.104:5001/api/auth/register';
+const url = 'https://unusual-gray-hedgehog.cyclic.app/api/auth/register';
 
 const Register = () => {
 	const [inputs, setInputs] = useState({
