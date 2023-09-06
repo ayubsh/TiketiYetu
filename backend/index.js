@@ -9,6 +9,7 @@ const user = require('./src/api/users/user-route');
 const event = require('./src/api/events/event-route');
 const ticket = require('./src/api/ticket/ticket-route');
 const review = require('./src/api/review/review-route');
+const cart = require('./src/api/cart/cart-route');
 
 const middlewares = require('./src/api/middlewares');
 
@@ -29,6 +30,7 @@ app.use('/api/auth', auth);
 app.use('/api/event', event);
 app.use('/api/ticket', ticket);
 app.use('/api/review', review);
+app.use('/api/cart', cart);
 
 
 app.use(middlewares.notFound);

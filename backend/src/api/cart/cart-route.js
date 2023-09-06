@@ -1,54 +1,70 @@
 const express = require('express');
-const cartController = require('../controllers/cartController');
 const router = express.Router();
 
-// POST /carts - Create a new cart
-router.post('/', cartController.createCart);
+const Cart = require('./cart-model');
+const CartItem = require('./cartitem-model');
 
-// POST /carts/:cartID/items - Add an item to the cart
-router.post('/:cartID/items', cartController.addItemToCart);
+
+// POST create cart 
+router.post('/', async (req, res, next) => {
+  try {
+    const {User_id} = req.body;
+    //   const user = await User.query().findById(req.body.userId);
+
+    // if (!user) {
+    //   return res.status(404).send('User not found');
+    // }
+
+    const newcart = await Cart.query().insert({
+      User_id  // Set user relationship
+    });
+
+    res.json(newcart);
+  } catch (error) {
+    next(error)
+  }
+});
+
+
+// CartItem routes
+
+// GET cart items by cart id
+// app.get('/cart-items/:cartId', async (req, res) => {
+//   const items = await CartItem.query()
+//     .where({ cartId: req.params.cartId });
+
+//   res.json(items);
+// });
+
+// POST add item to cart
+router.post('/cartitem', async (req, res, next) => {
+  try {
+      const {Cart_id, Ticket_id, Quantity} = req.body;
+
+    // Get cart and ticket
+    // const cart = await Cart.query().findById(req.body.cartId);
+    // const ticket = await Ticket.query().findById(req.body.ticketId);
+
+    // if (!cart) {
+    //   return res.status(404).send('Cart not found');
+    // }
+
+    // if (!ticket) {
+    //   return res.status(404).send('Ticket not found');
+    // }
+
+    // Create cart item
+    const newitem = await CartItem.query().insert({
+      Quantity,
+      Cart_id,
+      Ticket_id
+    });
+
+    res.json(newitem);
+  } catch (error) {
+    next(error);
+  }
+
+});
 
 module.exports = router;
-
-    In your cartController.js file, define the controller functions that handle creating a cart and adding cart items, along with the appropriate relationships:
-
-javascript
-
-const knex = require('../knexfile').development;
-
-// Create a new cart for a user
-async function createCart(req, res) {
-  try {
-    // Extract the user ID from the request, assuming it's sent in req.body.UserID
-    const userID = req.body.UserID;
-
-    // Insert the cart data into the Cart table and return the newly created cart
-    const [newCart] = await knex('Cart').insert({ UserID: userID }).returning('*');
-
-    res.status(201).json(newCart);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred while creating the cart.' });
-  }
-}
-
-// Add an item to a cart
-async function addItemToCart(req, res) {
-  try {
-    const { cartID } = req.params;
-    const { TicketID, Quantity } = req.body;
-
-    // Insert the cart item data into the CartItem table
-    await knex('CartItem').insert({ CartID: cartID, TicketID, Quantity });
-
-    res.status(201).json({ message: 'Item added to the cart successfully.' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'An error occurred while adding the item to the cart.' });
-  }
-}
-
-module.exports = {
-  createCart,
-  addItemToCart,
-};
