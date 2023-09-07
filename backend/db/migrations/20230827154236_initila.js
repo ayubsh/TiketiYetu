@@ -53,7 +53,6 @@ exports.up = async (knex) => {
 		table.string('Type').notNullable();
 		table.float('Price').notNullable();
 		table.integer('Quantity').notNullable();
-		//TODO create references to EVENTID
 		referencess(table, 'Event');
 	});
 

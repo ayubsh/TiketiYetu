@@ -35,6 +35,5 @@ app.use('/api/cart', cart);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
-console.log("tttttt");
 const port = 5000;
 app.listen(port, () => console.log(`Server has started on port: ${port}`))

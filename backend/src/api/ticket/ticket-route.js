@@ -13,11 +13,11 @@ router.get('/', async (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
-	const {Title, Desciption, Type, Price, Quantity, Event_id} = req.body;
+	const {Title, Description, Type, Price, Quantity, Event_id} = req.body;
 	try {
 		const newticket = await Ticket.query().insert({
 			Title,
-			Desciption,
+			Description,
 			Type,
 			Price,
 			Quantity,
