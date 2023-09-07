@@ -1,4 +1,29 @@
-const FeaturedTicket = () => {
+import { Link } from "react-router-dom";
+import Ticket from "./Ticket";
+import {useState, useEffect} from 'react'
+
+const url = 'https://unusual-gray-hedgehog.cyclic.app/api/ticket';
+
+
+const FeaturedTicket = ({tickes}) => {
+    const [tickets, setTicket] = useState([])
+
+    const fetchTicket = async () => {
+      const tickes = await fetch(url, {
+        method: 'GET',
+      });
+
+      const json = await tickes.json();
+      setTicket(json)
+      console.log(json)
+    }
+
+    let firstthreeelements = tickets.slice(0, 3)
+
+    useEffect(() => {
+      fetchTicket();
+    },[])
+
     return (
       <section
         className="
@@ -36,140 +61,13 @@ const FeaturedTicket = () => {
           </div>
           <div className="flex flex-wrap justify-center -mx-4">
 
-
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div className="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
-                <p className="mb-2 text-2xl font-medium">Enterprise</p>
-                <p className="mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Suscipit earum vitae tempore.
-                </p>
-                <div className="mb-6 space-y-2">
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>Better Support</span>
-                  </div>
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>5 team members</span>
-                  </div>
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>200 Credits</span>
-                  </div>
-                </div>
-                <button className="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
-                  Choose Plan
-                </button>
-              </div>
-            </div>
-
-
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4">
-              <div className="my-10 max-w-xs rounded-xl bg-pink-50 px-6 py-8 text-black">
-                <p className="mb-2 text-2xl font-medium">Enterprise</p>
-                <p className="mb-6">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Suscipit earum vitae tempore.
-                </p>
-                <div className="mb-6 space-y-2">
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>Better Support</span>
-                  </div>
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>5 team members</span>
-                  </div>
-                  <div className="flex space-x-2 font-medium">
-                    <span className="text-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    <span>200 Credits</span>
-                  </div>
-                </div>
-                <button className="w-full rounded-xl bg-blue-600 px-4 py-3 text-xl font-medium text-white">
-                  Choose Plan
-                </button>
-              </div>
-            </div>
-
+          {
+            firstthreeelements.map(x => (
+              // console.log("mapped: ",x.Title)
+              <Ticket title={x.Title} desc={x.Description} price={x.Price}/>
+            ))
+          }
+          <Link to={'/tickets'} className="text-blue-500">View More Tickets</Link>
           </div>
         </div>
       </section>

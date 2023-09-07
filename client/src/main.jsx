@@ -8,6 +8,8 @@ import App from './App.jsx'
 import ErrorPage from './components/ErrorPage';
 import Register from './components/Register'
 import Login from './components/Login'
+import TicketsPage from './components/TicketsPage'
+import Cart from './components/Cart'
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
 	{
 		path: '/login',
 		element: <Login />
+	},
+	{
+		path: '/tickets',
+		element: <TicketsPage />
+	},
+	{
+		path: '/cart',
+		element: <Cart />
 	}
 ])
 
