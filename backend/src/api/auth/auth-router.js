@@ -8,10 +8,13 @@ const User = require('../users/user-model');
 const jwtgen = require('./jwtgen');
 const authorize = require('./authorize');
 
-router.get('/', (req, res) => {
-	res.json({
-		msg: "yoooo"
-	})
+router.get('/', async (req, res) => {
+	try {
+		const users = await User.query();
+		res.json(users);
+	} catch (error) {
+		next(error);
+	}
 });
 
 router.post('/register', async (req, res, next) => {

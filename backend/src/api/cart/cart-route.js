@@ -4,16 +4,19 @@ const router = express.Router();
 const Cart = require('./cart-model');
 const CartItem = require('./cartitem-model');
 
+const User = require('../users/user-model');
+
 
 // POST create cart 
 router.post('/', async (req, res, next) => {
   try {
     const {User_id} = req.body;
-    //   const user = await User.query().findById(req.body.userId);
+    const user = await User.query().findById(User_id);
+		console.log(user);
 
-    // if (!user) {
-    //   return res.status(404).send('User not found');
-    // }
+     if (!user) {
+       return res.status(404).send('User not found');
+     }
 
     const newcart = await Cart.query().insert({
       User_id  // Set user relationship
